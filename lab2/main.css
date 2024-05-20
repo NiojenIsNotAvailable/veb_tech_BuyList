@@ -7,8 +7,9 @@ body {
 
 .container {
     display: flex;
-    gap: 50px;
+    gap: 30px;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 .add-item {
@@ -17,22 +18,22 @@ body {
 }
 
 .add-item input {
-    width: 900px;
-    padding: 10px;
-    font-size: 16px;
+    width: 700px;
+    padding: 8px;
+    font-size: 14px;
     border: 1px solid #B8B8B8;
-    border-right: none; /* Remove right border to blend with button */
+    border-right: none;
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
 }
 
 .add-item button {
-    padding: 10px 20px;
-    font-size: 16px;
+    padding: 8px 16px;
+    font-size: 14px;
     background-color: #007bff;
     color: white;
     border: 1px solid #007bff;
-    border-left: none; /* Remove left border to blend with input */
+    border-left: none;
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
     cursor: pointer;
@@ -43,11 +44,22 @@ body {
 }
 
 .shopping-section {
-    flex: 3;
     background-color: white;
-    padding: 20px;
+    padding: 15px;
     border-radius: 8px;
     box-shadow: 0 0 10px #B8B8B8;
+    flex: 3;
+    position: relative; /* For badge positioning */
+    min-width: 500px;
+}
+
+.summary {
+    background-color: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px #B8B8B8;
+    min-width: 250px;
+    flex: 1;
 }
 
 .shopping-list {
@@ -63,8 +75,12 @@ body {
 
 .item-name {
     flex: 1;
-    max-width: 100px;
-    margin-right: 200px;
+    max-width: 90px;
+    margin-right: 150px;
+}
+
+.item-name .nbought {
+    text-decoration: line-through;
 }
 
 .quantity {
@@ -72,18 +88,18 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 10px;
+    gap: 8px;
 }
 
 .quantity span {
     display: inline-block;
-    width: 25px;
-    height: 25px;
+    width: 20px;
+    height: 20px;
     text-align: center;
     background-color: #EBEBEB;
     border-radius: 5px;
-    line-height: 25px;
-    font-size: 14px;
+    line-height: 20px;
+    font-size: 12px;
 }
 
 .action-buttons {
@@ -91,15 +107,15 @@ body {
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    gap: 10px;
+    gap: 8px;
 }
 
 .btn-decrease,
 .btn-increase {
     color: #FFFFFF;
     display: inline-block;
-    padding: 15px 20px;
-    font-size: 18px;
+    padding: 10px 14px;
+    font-size: 16px;
     cursor: pointer;
     text-align: center;
     text-decoration: none;
@@ -132,8 +148,8 @@ body {
 .not-bought,
 .remove {
     display: inline-block;
-    padding: 15px 20px;
-    font-size: 14px;
+    padding: 10px 14px;
+    font-size: 12px;
     cursor: pointer;
     text-align: center;
     text-decoration: none;
@@ -179,8 +195,8 @@ body {
     background-color: #E7E7E7;
     color: #7B8191;
     display: inline-block;
-    padding: 15px 15px;
-    font-size: 14px;
+    padding: 10px 10px;
+    font-size: 12px;
     cursor: pointer;
     text-align: center;
     text-decoration: none;
@@ -189,41 +205,37 @@ body {
     border-radius: 14px;
 }
 
-.summary {
-    flex: 1;
-    background-color: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px #B8B8B8;
-}
-
 .summary h3 {
     margin: 0 0 10px 0;
-    font-size: 18px;
+    font-size: 16px;
 }
 
 .summary .remaining,
 .summary .bought-items {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 8px;
 }
 
-.summary .badge {
+.summary .quantity-badge {
     background-color: orange;
     border-radius: 12px;
-    padding: 2px 8px;
+    padding: 2px 6px;
     margin-left: 10px;
-    font-size: 14px;
+    font-size: 12px;
     color: white;
 }
 
 .summary .item {
     background-color: #EBEBEB;
     border-radius: 5px;
-    padding: 5px 10px;
+    padding: 5px 8px;
     display: flex;
     align-items: center;
+}
+
+.summary .item .name {
+    text-decoration: line-through;
 }
 
 hr {
@@ -233,8 +245,106 @@ hr {
 }
 
 .empty-space {
-    width: 25px;
-    height: 25px;
+    width: 20px;
+    height: 20px;
     display: inline-block;
     visibility: hidden;
+}
+
+/* Badge styling */
+.badge-container {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.badge {
+    background-color: purple;
+    color: white;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    padding: 8px 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.badge:hover {
+    background-color: blue;
+    transform: translateY(-10px);
+}
+
+.badge:hover::after {
+    content: "Created by: D. Horiachok";
+    display: block;
+    margin-top: 10px;
+    color: white;
+    font-size: 12px;
+}
+
+@media print {
+    .badge {
+        background-color: white;
+        color: purple;
+        border: 2px solid purple;
+    }
+    .badge::after {
+        content: "Created by: D. Horiachok";
+        display: block;
+        margin-top: 10px;
+        color: purple;
+        font-size: 12px;
+    }
+}
+
+/* Tooltip styling */
+button[data-tooltip] {
+    position: relative;
+}
+
+button[data-tooltip]::before {
+    content: attr(data-tooltip);
+    position: absolute;
+    top: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: purple;
+    color: white;
+    padding: 5px 8px;
+    border-radius: 5px;
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    pointer-events: none;
+    white-space: nowrap;
+    font-size: 12px;
+}
+
+button[data-tooltip]:hover::before {
+    opacity: 1;
+    transform: translate(-50%, -10px);
+}
+
+/* Responsive layout */
+@media (max-width: 800px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .shopping-section {
+        min-width: unset; /* Remove min-width to allow shrinking */
+        width: 100%; /* Full width in column layout */
+        margin-bottom: 20px; /* Spacing between blocks */
+    }
+
+    .summary {
+        min-width: unset; /* Remove min-width to allow shrinking */
+        width: 100%; /* Full width in column layout */
+    }
+
+    .add-item input {
+        width: 100%; /* Full width for input */
+    }
 }
