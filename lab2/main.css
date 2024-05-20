@@ -1,0 +1,240 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #D3D3D3;
+    margin: 0;
+    padding: 40px;
+}
+
+.container {
+    display: flex;
+    gap: 50px;
+    justify-content: space-between;
+}
+
+.add-item {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.add-item input {
+    width: 900px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #B8B8B8;
+    border-right: none; /* Remove right border to blend with button */
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.add-item button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: white;
+    border: 1px solid #007bff;
+    border-left: none; /* Remove left border to blend with input */
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    cursor: pointer;
+}
+
+.add-item button:hover {
+    background-color: #0056b3;
+}
+
+.shopping-section {
+    flex: 3;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px #B8B8B8;
+}
+
+.shopping-list {
+    border-top: 1px solid #B8B8B8;
+}
+
+.item-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 0;
+}
+
+.item-name {
+    flex: 1;
+    max-width: 100px;
+    margin-right: 200px;
+}
+
+.quantity {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.quantity span {
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    text-align: center;
+    background-color: #EBEBEB;
+    border-radius: 5px;
+    line-height: 25px;
+    font-size: 14px;
+}
+
+.action-buttons {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.btn-decrease,
+.btn-increase {
+    color: #FFFFFF;
+    display: inline-block;
+    padding: 15px 20px;
+    font-size: 18px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    outline: none;
+    border-radius: 50%;
+}
+
+.btn-decrease {
+    background-color: #CC2E25;
+    box-shadow: 0 5px #A12532;
+    border: 2px solid #A12532;
+}
+
+.btn-increase {
+    background-color: #78BB2E;
+    box-shadow: 0 5px #629B26;
+    border: 2px solid #629B26;
+}
+
+.btn-decrease:hover {
+    background-color: #BD263A;
+}
+
+.btn-increase:hover {
+    background-color: #72AB32;
+}
+
+.bought,
+.not-bought,
+.remove {
+    display: inline-block;
+    padding: 15px 20px;
+    font-size: 14px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    outline: none;
+    border-radius: 14px;
+}
+
+.bought {
+    background-color: #E9E8EE;
+    box-shadow: 0 5px #C6C6C6;
+    border: 2px solid #C5C4C9;
+    color: #686560;
+}
+
+.not-bought {
+    background-color: #E9E8EE;
+    box-shadow: 0 5px #C6C6C6;
+    border: 2px solid #C5C4C9;
+    color: #686560;
+}
+
+.remove {
+    background-color: #DB143B;
+    box-shadow: 0 5px #B10D2F;
+    border: 2px solid #990B29;
+    color: white;
+}
+
+.bought:hover {
+    background-color: #DAD9DE;
+}
+
+.not-bought:hover {
+    background-color: #DAD9DE;
+}
+
+.remove:hover {
+    background-color: #CC1436;
+}
+
+.number {
+    background-color: #E7E7E7;
+    color: #7B8191;
+    display: inline-block;
+    padding: 15px 15px;
+    font-size: 14px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    outline: none;
+    border-radius: 14px;
+}
+
+.summary {
+    flex: 1;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px #B8B8B8;
+}
+
+.summary h3 {
+    margin: 0 0 10px 0;
+    font-size: 18px;
+}
+
+.summary .remaining,
+.summary .bought-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.summary .badge {
+    background-color: orange;
+    border-radius: 12px;
+    padding: 2px 8px;
+    margin-left: 10px;
+    font-size: 14px;
+    color: white;
+}
+
+.summary .item {
+    background-color: #EBEBEB;
+    border-radius: 5px;
+    padding: 5px 10px;
+    display: flex;
+    align-items: center;
+}
+
+hr {
+    border: 0;
+    border-top: 1px solid #eee;
+    margin: 10px 0;
+}
+
+.empty-space {
+    width: 25px;
+    height: 25px;
+    display: inline-block;
+    visibility: hidden;
+}

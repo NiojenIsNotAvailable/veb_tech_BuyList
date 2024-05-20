@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Shopping List</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <div class="container">
+        <div class="shopping-section">
+            <div class="add-item">
+                <input type="text" placeholder="Назва товару">
+                <button>Додати</button>
+            </div>
+            <div class="shopping-list">
+                <div class="item-row first-row">
+                    <div class="item-name">
+                        <span class="name nbought">Помідори</span>
+                    </div>
+                    <div class="quantity">
+                        <span class="empty-space"></span>
+                        <span class="number">2</span>
+                        <span class="empty-space"></span>
+                    </div>
+                    <div class="action-buttons">
+                        <button class="not-bought">Не куплено</button>
+                    </div>
+                    <hr>
+                </div>
+                <div class="item-row">
+                    <div class="item-name">
+                        <span class="name">Печиво</span>
+                    </div>
+                    <div class="quantity">
+                        <button class="btn-decrease">−</button>
+                        <span class="number">2</span>
+                        <button class="btn-increase">+</button>
+                    </div>
+                    <div class="action-buttons">
+                        <button class="bought">Куплено</button>
+                        <button class="remove">×</button>
+                    </div>
+                    <hr>
+                </div>
+                <div class="item-row">
+                    <div class="item-name">
+                        <input type="text" placeholder="Сир">
+                    </div>
+                    <div class="quantity">
+                        <button class="btn-decrease">−</button>
+                        <span class="number">2</span>
+                        <button class="btn-increase">+</button>
+                    </div>
+                    <div class="action-buttons">
+                        <button class="bought">Куплено</button>
+                        <button class="remove">×</button>
+                    </div>
+                    <hr>
+                </div>
+            </div>
+        </div>
+        <div class="summary">
+            <h3>Залишилося</h3>
+            <hr>
+            <div class="remaining">
+                <div class="item">Печиво <span class="badge">2</span></div>
+                <div class="item">Сир <span class="badge">1</span></div>
+            </div>
+            <hr>
+            <h3>Куплено</h3>
+            <hr>
+            <div class="bought-items">
+                <div class="item">Помідори <span class="badge">2</span></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
