@@ -18,7 +18,7 @@ body {
 }
 
 .add-item input {
-    width: 700px;
+    width: 1000px;
     padding: 8px;
     font-size: 14px;
     border: 1px solid #B8B8B8;
@@ -284,67 +284,40 @@ hr {
     font-size: 12px;
 }
 
-@media print {
-    .badge {
-        background-color: white;
-        color: purple;
-        border: 2px solid purple;
+@media (max-width: 710px) {
+    body {
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        height: 100vh;
     }
-    .badge::after {
-        content: "Created by: D. Horiachok";
-        display: block;
-        margin-top: 10px;
-        color: purple;
-        font-size: 12px;
-    }
-}
 
-/* Tooltip styling */
-button[data-tooltip] {
-    position: relative;
-}
-
-button[data-tooltip]::before {
-    content: attr(data-tooltip);
-    position: absolute;
-    top: -25px;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: purple;
-    color: white;
-    padding: 5px 8px;
-    border-radius: 5px;
-    opacity: 0;
-    transition: opacity 0.3s ease, transform 0.3s ease;
-    pointer-events: none;
-    white-space: nowrap;
-    font-size: 12px;
-}
-
-button[data-tooltip]:hover::before {
-    opacity: 1;
-    transform: translate(-50%, -10px);
-}
-
-/* Responsive layout */
-@media (max-width: 800px) {
     .container {
         flex-direction: column;
         align-items: center;
     }
 
-    .shopping-section {
+    .shopping-section,
+    .summary {
+        width: 100%; /* Adjust to full width on smaller screens */
         min-width: unset; /* Remove min-width to allow shrinking */
-        width: 100%; /* Full width in column layout */
         margin-bottom: 20px; /* Spacing between blocks */
     }
 
-    .summary {
-        min-width: unset; /* Remove min-width to allow shrinking */
-        width: 100%; /* Full width in column layout */
+    .add-item input {
+        width: calc(100% - 120px); /* Adjust input width */
     }
 
-    .add-item input {
-        width: 100%; /* Full width for input */
+    .item-name {
+        margin-right: 20px; /* Adjust margin */
+    }
+
+    /*.badge-container {
+    /*    position: static; /* Adjust badge position */
+    /*    margin-top: 20px; /* Add margin */
+    /*}*/
+
+    .badge {
+        max-height: 50px; /* Adjust badge size */
     }
 }
