@@ -71,6 +71,7 @@ body {
     border-top: 1px solid #B8B8B8;
 }
 
+
 .item-row {
     display: flex;
     align-items: center;
@@ -262,7 +263,7 @@ hr {
     visibility: hidden;
 }
 
-
+/* Badge styling */
 .badge-container {
     position: absolute;
     bottom: 10px;
@@ -295,34 +296,31 @@ hr {
     font-size: 12px;
 }
 
-
-
-
 @media (max-width: 710px) {
     .container {
         flex-direction: column;
-        align-items: flex-start; 
+        align-items: flex-start;
     }
 
     .shopping-section, .summary {
-        width: 100%; 
-        min-width: 550; 
+        width: 100%;
+        min-width: 550px;
     }
 
     .add-item input {
-        width: calc(100% - 80px); 
+        width: calc(100% - 80px);
     }
 
     .item-name {
-        margin-right: 20px; 
+        margin-right: 20px;
     }
 
     .badge {
-        max-height: 50px; 
+        max-height: 50px;
     }
 }
 
-
+/* Print styling */
 @media print {
     .badge {
         background-color: white;
@@ -338,4 +336,31 @@ hr {
     .badge::after {
         content: none;
     }
+}
+
+/* Tooltip styling */
+button[data-tooltip] {
+    position: relative;
+}
+
+button[data-tooltip]::before {
+    content: attr(data-tooltip);
+    position: absolute;
+    top: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: purple;
+    color: white;
+    padding: 5px 8px;
+    border-radius: 5px;
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    pointer-events: none;
+    white-space: nowrap;
+    font-size: 12px;
+}
+
+button[data-tooltip]:hover::before {
+    opacity: 1;
+    transform: translate(-50%, -10px);
 }
