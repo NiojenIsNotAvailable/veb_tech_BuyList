@@ -12,6 +12,7 @@
                 <input type="text" placeholder="Назва товару">
                 <button data-tooltip="Add item">Додати</button>
             </div>
+            <hr>
             <div class="shopping-list">
                 <div class="item-row first-row">
                     <div class="item-name">
@@ -25,7 +26,6 @@
                     <div class="action-buttons">
                         <button class="not-bought" data-tooltip="Mark as not bought">Не куплено</button>
                     </div>
-                    <hr>
                 </div>
                 <hr>
                 <div class="item-row">
@@ -41,16 +41,15 @@
                         <button class="bought" data-tooltip="Mark as bought">Куплено</button>
                         <button class="remove" data-tooltip="Remove item">×</button>
                     </div>
-                    <hr>
                 </div>
                 <hr>
                 <div class="item-row">
                     <div class="item-name">
-                        <input type="text" placeholder="Сир">
+                        <input type="text" placeholder="">
                     </div>
                     <div class="quantity">
-                        <button class="btn-decrease" data-tooltip="Decrease quantity">−</button>
-                        <span class="number">2</span>
+                        <button class="btn-decrease" data-tooltip="Decrease quantity" disabled>−</button>
+                        <span class="number">1</span>
                         <button class="btn-increase" data-tooltip="Increase quantity">+</button>
                     </div>
                     <div class="action-buttons">
@@ -76,7 +75,8 @@
         </div>
     </div>
     <div class="badge-container">
-        <div class="badge">Buy List</div>
+        <div class="badge"></div>
     </div>
+    
 </body>
 </html>
