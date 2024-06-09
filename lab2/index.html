@@ -9,74 +9,26 @@
     <div class="container">
         <div class="shopping-section">
             <div class="add-item">
-                <input type="text" placeholder="Назва товару">
-                <button data-tooltip="Add item">Додати</button>
+                <input type="text" placeholder="Назва товару" id="item-input">
+                <button data-tooltip="Add item" id="add-button">Додати</button>
             </div>
             <hr>
-            <div class="shopping-list">
-                <div class="item-row first-row">
-                    <div class="item-name">
-                        <span class="name nbought">Помідори</span>
-                    </div>
-                    <div class="quantity">
-                        <span class="empty-space"></span>
-                        <span class="number">2</span>
-                        <span class="empty-space"></span>
-                    </div>
-                    <div class="action-buttons">
-                        <button class="not-bought" data-tooltip="Mark as not bought">Не куплено</button>
-                    </div>
-                </div>
-                <hr>
-                <div class="item-row">
-                    <div class="item-name">
-                        <span class="name">Печиво</span>
-                    </div>
-                    <div class="quantity">
-                        <button class="btn-decrease" data-tooltip="Decrease quantity">−</button>
-                        <span class="number">2</span>
-                        <button class="btn-increase" data-tooltip="Increase quantity">+</button>
-                    </div>
-                    <div class="action-buttons">
-                        <button class="bought" data-tooltip="Mark as bought">Куплено</button>
-                        <button class="remove" data-tooltip="Remove item">×</button>
-                    </div>
-                </div>
-                <hr>
-                <div class="item-row">
-                    <div class="item-name">
-                        <input type="text" placeholder="">
-                    </div>
-                    <div class="quantity">
-                        <button class="btn-decrease" data-tooltip="Decrease quantity" disabled>−</button>
-                        <span class="number">1</span>
-                        <button class="btn-increase" data-tooltip="Increase quantity">+</button>
-                    </div>
-                    <div class="action-buttons">
-                        <button class="bought" data-tooltip="Mark as bought">Куплено</button>
-                        <button class="remove" data-tooltip="Remove item">×</button>
-                    </div>
-                </div>
+            <div class="shopping-list" id="shopping-list">
             </div>
         </div>
         <div class="summary">
             <h3>Залишилося</h3>
             <hr>
-            <div class="remaining">
-                <div class="item">Печиво <span class="quantity-badge">2</span></div>
-                <div class="item">Сир <span class="quantity-badge">1</span></div>
-            </div>
+            <div class="remaining" id="remaining-items"></div>
             <hr>
             <h3>Куплено</h3>
             <hr>
-            <div class="bought-items">
-                <div class="item"><span class="name nbought">Помідори</span> <span class="quantity-badge">2</span></div>
-            </div>
+            <div class="bought-items" id="bought-items"></div>
         </div>
     </div>
     <div class="badge-container">
         <div class="badge"></div>
     </div>
-    
+    <script src="main.js"></script>
 </body>
 </html>
